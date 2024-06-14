@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* input:focus {
+    outline: none;
+    border-color: #007BFF; /* Optional: Change border color on focus for a subtle effect */
+}
+
+body {
+    height: 400px;
+    width: 300px;
+    background-color: #c4c4c4;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cred_store_form {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cred_store_form img {
+    height: 60px;
+    width: 60px;
+    margin-bottom: 15px;
+    object-fit: scale-down;
+}
+
+.cred_store_form h3 {
+    margin-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.nav-links span {
+    margin: 0 15px;
+    color: #0056b3;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.nav-links span:hover {
+    background-color: #eaeaea;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.company_logo {
+    height: 60px;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+#home p {
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+#home input {
+    width: 100%;
+    height: 35px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    background: none;
+}
+
+#company_url{
+    cursor: not-allowed;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#pwd {
+    flex: 1;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#togglePassword {
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 9px;
+}
+
+
+
+.cred_store_form #list {
+    display: none;
+    height: 390.5px;
+    overflow: auto;
+}
+
+#save_button{
+    background-color: #7abaff;
+    padding: 10px;
+    border-radius: 50px;
+    font-family: 'Ubuntu', sans-serif;
+    text-align: center;
+    border: none;
+    color: #ffffff;
+    font-weight: 800;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+#save_button:disabled {
+    background-color: #ccc; /* Grey background */
+    color: #666; /* Grey text */
+    cursor: not-allowed; /* Not-allowed cursor */
+    border: 1px solid #999; /* Grey border */
+    opacity: 0.6; /* Reduced opacity */
+}
+
+#save_button:not(:disabled):hover {
+    background-color: #0056b3; /* Darker background on hover */
+    color: #fff; /* White text on hover */
+    cursor: pointer;
+  }
+
+#error_message {
+    height: 100%;
+    width: 100%;
+    display: none;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    color: #d9534f;
+    padding: 20px;
+}
+
+/* Styling for the list of URLs and passwords */
+#list {
+    margin-top: 20px;
+    height: fit-content;
+}
+
+#company_data {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.list-item {
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-item:hover {
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.list-item p {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 12px;
+}
+
+.list-item img{
+    width: 60px;
+    height: 40px;
+    padding-right: 10px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+.list-item .url {
+    font-weight: bold;
+    font-size: 1.1em;
+    text-overflow: clip;
+}
+
+.list-item .password {
+    font-family: monospace;
+    color: #555;
+}
+
+.edit-button {
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: none;
+}
+
+.delete-button {
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: none;
+}
+
+
+#details_page{
+    display: none;
+    background-color: #ffffff;
+    height: 600px;
+    animation: 0.5s slideIn;
+    padding: 20px;
+    font-family: 'Ubuntu';
+}
+
+@keyframes slideIn {
+    from {
+      transform: translateX(400px);
+    }
+    to {
+      transform: translateX(0);
+    }
+}
+
+
+
+#detailsContent{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+#detailsContent p{
+    padding-left: 10px;
+}
+
+#detailsHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#detail-img{
+    height: 50px;
+    width: 100px;
+    object-fit: scale-down;
+}
+
+#detailsContent input{
+    height: 50px;
+    padding-left: 10px;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid #eaeaea;
+}
+
+
+.detail-password-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#detail-pwd {
+    flex: 1;
+    height: 35px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#detail-togglePassword {
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 12px;
+    margin-bottom: -11px;
+    height: 50px;
+}
+
+.detail-url-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#detail-url {
+    flex: 1;
+    height: 35px;
+    padding: 5px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#detail-url-target {
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 12px;
+    margin-bottom: -11px;
+    height: 50px;
+}
+
+#closeDetailsPage{
+    font-size: 25px;
+    color: white;
+    position: relative;
+    color: #0056b3;
+}
+
+#closeDetailsPage:hover{
+    cursor: pointer;
+}

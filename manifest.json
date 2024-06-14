@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Account Manager",
+  "version": "1.0.0",
+  "author": "Akshay Pendyala",
+  "description": "Safely manage and organize credentials for companies utilizing the Workday platform with our Workday Credential Manager.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "images/password-manager.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "images/password-manager.png"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Reader</title>
+  <base target="_blank"/>
+  <link rel="stylesheet" type="text/css" href="/popup.css">
+  <script defer src="/popup.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+  <div id="cred_store_form" class="cred_store_form">
+    <img src="/images/password-manager.png" alt="Password Manager Logo">
+    <h3>Workday Account Manager</h3>
+    <div class="nav-links">
+      <span id="home_page"><i class="fa fa-home"></i></span>
+      <span id="list_page"><i class="fa fa-list"></i></span>
+    </div>
+    <form id="home">
+      <img class="company_logo" alt="Company Logo">
+      <p>Website</p>
+      <input type="url" id="company_url">
+      <p>Email</p>
+      <input type="text" id="company_email">
+      <p>Password</p>
+<div class="password-container">
+  <input type="password" id="pwd">
+  <button type="button" id="togglePassword" aria-label="Toggle password visibility"><i class="far fa-eye" aria-hidden="true"></i></button>
+</div>
+    <!--<button id="save_button" class="inactive" type="submit">Save</button>-->
+    </form>
+    <div id="list">
+      <ul id="company_data"></ul>
+    </div>
+  </div>
+  <div id="error_message">
+    Sorry, this only works on Workday pages.
+  </div>
+  <div id="details_page">
+    <div id="detailsContent">
+      <div id="detailsHeader">
+        <span id="closeDetailsPage">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+        <img id="detail-img">
+        <span style="visibility: hidden;" id="closeDetailsPage">
+          <i class="fas fa-arrow-left"></i>
+        </span>
+      </div>
+      <br>
+      <br><br>
+      <p>EMAIL</p>
+      <input type="text" id="detail-email"><br><br>
+      <p>PASSWORD</p>
+      <div class="detail-password-container">
+        <input type="password" id="detail-pwd"><br><br>
+        <button type="button" id="detail-togglePassword" aria-label="Toggle password visibility"><i class="far fa-eye" aria-hidden="true"></i></button>
+      </div>
+      <p>WEBSITE</p>
+      <div class="detail-url-container">
+        <input type="url" id="detail-url"><br><br>
+        <button type="button" id="detail-url-target" aria-label="Open website in a new tab"><i class="fas fa-external-link-alt"></i></button>
+      </div>
+      <button id="save_button" class="inactive" type="submit">Save</button>
+    </div>
+  </div>
+</body>
+</html>
